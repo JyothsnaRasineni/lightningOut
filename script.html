@@ -1,1 +1,29 @@
+<html>
+  <head>
+    <title>My Website</title>
+  </head>
+  <!--This is a comment-->
+  <body>
+    <h1>My Website</h1>
+    <p>This is my very first Website</p>
+<script src="https://selfemployed121-dev-ed.my.site.com/lightning/lightning.out.js"></script>
+
+<div id="lightningLocator"></div>
+
+<script>
+    $Lightning.use("c:embedFlowInExternalWebsiteApp",
+        function() {
+            $Lightning.createComponent(
+                "c:embedFlowInExternalWebsite",
+                { },                  
+                "lightningLocator",   
+                function(cmp) {}
+            );
+        },
+        'https://selfemployed121-dev-ed.my.site.com'
+    );
+</script>
+
+  </body>
+</html>
 
