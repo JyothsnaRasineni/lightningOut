@@ -1,29 +1,46 @@
+
 <html>
-  <head>
-    <title>My Website</title>
-  </head>
-  <!--This is a comment-->
-  <body>
-    <h1>My Website</h1>
-    <p>This is my very first Website</p>
-<script src="https://selfemployed121-dev-ed.my.site.com/lightning/lightning.out.js"></script>
 
-<div id="lightningLocator"></div>
+<style>
 
-<script>
-    $Lightning.use("c:embedFlowInExternalWebsiteApp",
-        function() {
-            $Lightning.createComponent(
-                "c:embedFlowInExternalWebsite",
-                { },                  
-                "lightningLocator",   
-                function(cmp) {}
-            );
-        },
-        'https://selfemployed121-dev-ed.my.site.com'
+  a {
+    color: orange;
+  }
+
+</style>
+
+
+<script src="https://centerbase--partialcb.sandbox.my.site.com/WebToCase/lightning/lightning.out.js"></script>
+
+<div data-lightning-out="true"></div>
+
+  <script>
+
+    const appName = 'c:embedFlowInExternalWebsiteApp';
+    const componentName = 'c:embedFlowInExternalWebsite';
+    const lightningEndpoint = 'https://centerbase--partialcb.sandbox.my.site.com/WebToCase';
+    const targetElement = document.querySelector("[data-lightning-out]");
+    const componentAttributes = {
+
+    };
+
+    $Lightning.use(
+            appName,
+            function (){
+              $Lightning.createComponent(
+                      componentName,
+                      componentAttributes,
+                      targetElement,
+                      function (cmp){
+                        console.log('lightning component created');
+                      }
+              );
+            },
+            lightningEndpoint
     );
-</script>
 
-  </body>
+
+  </script>
+
+
 </html>
-
