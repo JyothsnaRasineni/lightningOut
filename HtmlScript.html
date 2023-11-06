@@ -1,45 +1,22 @@
 
+<!DOCTYPE html>
 <html>
+<head>
+    <script src="https://centerbase--partialcb.sandbox.my.site.com/WebToCase/lightning/lightning.out.js"></script>
+</head>
+<body>
+    <div id="container"></div>
 
-<style>
-
-  a {
-    color: orange;
-  }
-
-</style>
-
-<script src="https://centerbase--partialcb.sandbox.my.site.com/WebToCase/lightning/lightning.out.js"></script>
-
-<div data-lightning-out="true"></div>
-
-  <script>
-
-    const appName = 'c:embedFLSFlowInExternalWebsiteApp';
-    const componentName = 'c:embedFLSFlowInExternalWebsite';
-    const lightningEndpoint = 'https://centerbase--partialcb.sandbox.my.site.com';
-    const targetElement = document.querySelector("[data-lightning-out]");
-    const componentAttributes = {
-
-    };
-
-    $Lightning.use(
-            appName,
-            function (){
-              $Lightning.createComponent(
-                      componentName,
-                      componentAttributes,
-                      targetElement,
-                      function (cmp){
-                        console.log('lightning component created');
-                      }
-              );
-            },
-            lightningEndpoint
-    );
-
-
-  </script>
-
-
+    <script>
+        $Lightning.use("c:embedFLSFlowInExternalWebsiteApp", function() {
+            $Lightning.createComponent("c:embedFLSFlowInExternalWebsite",
+                {},
+                "container",
+                function (cmp) {
+                    console.log("Lightning component was created!");
+                }
+            );
+        });
+    </script>
+</body>
 </html>
