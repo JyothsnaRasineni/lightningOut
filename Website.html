@@ -1,22 +1,51 @@
-
-<!DOCTYPE html>
 <html>
-<head>
-    <script src="https://centerbase--partialcb.sandbox.my.site.com/WebToCase/lightning/lightning.out.js"></script>
-</head>
-<body>
-    <div id="container"></div>
 
-    <script>
-        $Lightning.use("c:embedWebsiteFlowInExternalWebsiteApp", function() {
-            $Lightning.createComponent("c:embedWebsiteFlowInExternalWebsite",
-                {},
-                "container",
-                function (cmp) {
-                    console.log("Lightning component was created!");
-                }
-            );
-        });
-    </script>
-</body>
+<script src=https://centerbase.my.site.com/support/lightning/lightning.out.js></script>
+
+<div data-lightning-out="true"></div>
+
+  <script>
+
+    const appName = 'c: embedWebsiteFlowInExternalWebsiteApp';
+
+    const componentName = 'c: embedWebsiteFlowInExternalWebsite';
+
+    const lightningEndpoint = 'https://centerbase.my.site.com/support';
+
+    const targetElement = document.querySelector("[data-lightning-out]");
+
+    const componentAttributes = {
+
+    };
+
+    $Lightning.use(
+
+            appName,
+
+            function (){
+
+              $Lightning.createComponent(
+
+                      componentName,
+
+                      componentAttributes,
+
+                      targetElement,
+
+                      function (cmp){
+
+                        console.log('lightning component created');
+
+                      }
+
+              );
+
+            },
+
+            lightningEndpoint
+
+    );
+
+  </script>
+
 </html>
